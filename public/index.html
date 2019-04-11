@@ -1,5 +1,39 @@
-<html>
+<!DOCTYPE html>
+<html lang="en-US">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="js/ContactsController.js"></script>
+<script>
+var app = angular.module('contactsApp', []);
+app.controller('ContactsController', ContactsController);
+
+</script>
 <body>
-    <h1>Hello World from Index</h1>
+
+<div ng-app="contactsApp">
+
+  <h1>Contacts App</h1>
+  <div ng-controller="ContactsController">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="contact in contacts_list">
+                <td>{{contact.name}}</td>
+                <td>{{contact.email}}</td>
+                <td>{{contact.phone}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+    </div>
+</div>
+
 </body>
 </html>
